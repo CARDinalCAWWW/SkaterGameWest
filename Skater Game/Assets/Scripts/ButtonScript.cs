@@ -7,6 +7,7 @@ public class ButtonScript : MonoBehaviour
     [SerializeField] GameObject restartButton;
     [SerializeField] GameObject pauseButton;
     [SerializeField] GameObject unpauseButton;
+    [SerializeField] GameObject menuButton;
 
     private Death deathScript;
 
@@ -17,6 +18,7 @@ public class ButtonScript : MonoBehaviour
         carneyButton.SetActive(false);
         restartButton.SetActive(false);
         unpauseButton.SetActive(false);
+        menuButton.SetActive(false);
 
         pauseButton.SetActive(true);
     }
@@ -55,6 +57,7 @@ public class ButtonScript : MonoBehaviour
         carneyButton.SetActive(true);
         restartButton.SetActive(true);
         unpauseButton.SetActive(true);
+        menuButton.SetActive(true);
 
         pauseButton.SetActive(false);
 
@@ -66,9 +69,15 @@ public class ButtonScript : MonoBehaviour
         carneyButton.SetActive(false);
         restartButton.SetActive(false);
         unpauseButton.SetActive(false);
+        menuButton.SetActive(false);
 
         pauseButton.SetActive(true);
 
         Time.timeScale = 1;
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }
