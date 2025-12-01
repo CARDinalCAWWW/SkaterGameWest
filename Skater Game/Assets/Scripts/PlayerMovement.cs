@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float maxJumpTime = 0.25f;
     [SerializeField] float rotateStep = 45f;
     [SerializeField] LayerMask groundLayer;
+    [SerializeField] ParticleSystem particles;
 
     Rigidbody2D rb;
     Collider2D col;
@@ -24,12 +25,15 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
+
+        particles.Play();
     }
 
     void Update()
     {
         bool spaceHeld = Input.GetKey(KeyCode.Space);
         isGrounded = col.IsTouchingLayers(groundLayer);
+        Debug.Log("Is Grounded Check 1 " + isGrounded);
 
         if (spaceHeld && !spaceHeldLastFrame && isGrounded)
         {
@@ -37,7 +41,11 @@ public class PlayerMovement : MonoBehaviour
             jumpTimeCounter = maxJumpTime;
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             anim.SetBool("isJumping", true);
+
+            if (particles.isPlaying)
+                particles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
+
 
         if (spaceHeld && isJumping)
         {
@@ -52,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("isJumping", false);
             }
         }
+        
 
         if (!spaceHeld)
         {
@@ -65,5 +74,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         spaceHeldLastFrame = spaceHeld;
+
+        if (!particles.isPlaying && isGrounded)
+        {
+            particles.Play();
+        }
     }
 }
