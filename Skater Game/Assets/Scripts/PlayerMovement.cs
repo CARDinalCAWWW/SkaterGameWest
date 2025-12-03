@@ -41,9 +41,6 @@ public class PlayerMovement : MonoBehaviour
             jumpTimeCounter = maxJumpTime;
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             anim.SetBool("isJumping", true);
-
-            if (particles.isPlaying)
-                particles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
 
 
@@ -78,6 +75,10 @@ public class PlayerMovement : MonoBehaviour
         if (!particles.isPlaying && isGrounded)
         {
             particles.Play();
+        }
+        else if (particles.isPlaying && !isGrounded)
+        {
+                particles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
     }
 }
