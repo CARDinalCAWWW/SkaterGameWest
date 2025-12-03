@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
     {
         bool spaceHeld = Input.GetKey(KeyCode.Space);
         isGrounded = col.IsTouchingLayers(groundLayer);
-        Debug.Log("Is Grounded Check 1 " + isGrounded);
 
         if (spaceHeld && !spaceHeldLastFrame && isGrounded)
         {
