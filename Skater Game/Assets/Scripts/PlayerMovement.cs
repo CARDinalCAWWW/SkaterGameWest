@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotateStep = 45f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] ParticleSystem particles;
+    [SerializeField] private AudioSource rollingAudioSource;
+
 
     Rigidbody2D rb;
     Collider2D col;
@@ -72,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
         spaceHeldLastFrame = spaceHeld;
 
+        // Particles
         if (!particles.isPlaying && isGrounded)
         {
             particles.Play();
@@ -80,5 +83,18 @@ public class PlayerMovement : MonoBehaviour
         {
                 particles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
+
+        //Sound
+        if (isGrounded && !deathScript.isDead)
+        {
+            if (!rollingAudioSource.isPlaying)
+                rollingAudioSource.Play();
+        }
+        else
+        {
+            if (rollingAudioSource.isPlaying)
+                rollingAudioSource.Stop();
+        }
+
     }
 }
