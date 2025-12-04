@@ -654,6 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   addAmount: 1
+  FlipAddAmount: 10
   scoreText: {fileID: 0}
 --- !u!114 &347909496
 MonoBehaviour:
@@ -1792,7 +1793,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 8242935023697170958, guid: 3645d0f039677a943b9e1c10d5595965, type: 3}
-  m_Color: {r: 0.82745105, g: 0.45098042, b: 0.2509804, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1876,7 +1877,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 45351dd1317c93843ab3f69c25b039f5, type: 3}
   m_Resource: {fileID: 8300000, guid: 45351dd1317c93843ab3f69c25b039f5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.723
   m_Pitch: 1
   Loop: 0
   Mute: 0

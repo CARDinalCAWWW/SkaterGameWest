@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpPower = 7f;
     [SerializeField] float maxJumpTime = 0.25f;
     [SerializeField] float rotateStep = 45f;
+
+
     [SerializeField] LayerMask groundLayer;
     [SerializeField] ParticleSystem particles;
     [SerializeField] private AudioSource rollingAudioSource;
@@ -13,16 +15,20 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Collider2D col;
     Animator anim;
+
     bool isJumping = false;
     float jumpTimeCounter = 0f;
     bool spaceHeldLastFrame = false;
     bool isGrounded = false;
+    float timesRotated = 0;
 
     private Death deathScript;
+    private Score scoreScript;
 
     void Start()
     {
         deathScript = FindFirstObjectByType<Death>();
+        scoreScript = FindFirstObjectByType<Score>();
 
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -58,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("isJumping", false);
             }
         }
-        
 
         if (!spaceHeld)
         {
@@ -69,7 +74,19 @@ public class PlayerMovement : MonoBehaviour
         if (spaceHeld && !spaceHeldLastFrame && !isGrounded && !deathScript.isDead)
         {
             transform.Rotate(0, 0, rotateStep);
+            timesRotated ++;
+
+            if (timesRotated >= 8)
+            {
+                scoreScript.FlipAddScore();
+                timesRotated = 0;
+            }
+            else if (isGrounded)
+            {
+                timesRotated = 0;
+            }
         }
+
 
         spaceHeldLastFrame = spaceHeld;
 

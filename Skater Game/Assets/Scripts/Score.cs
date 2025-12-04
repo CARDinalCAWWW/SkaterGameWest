@@ -4,7 +4,8 @@ using TMPro;
 public class Score : MonoBehaviour
 {
     [SerializeField] float addAmount = 1f;
-    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] float FlipAddAmount = 1f;
+    private TextMeshProUGUI scoreText;
 
     private float score;
 
@@ -27,5 +28,10 @@ public class Score : MonoBehaviour
     {
         score += addAmount * Time.deltaTime * 2;
         scoreText.text = ("Score: " + Mathf.FloorToInt(score).ToString());
+    }
+
+    public void FlipAddScore()
+    {
+        score += FlipAddAmount;
     }
 }
