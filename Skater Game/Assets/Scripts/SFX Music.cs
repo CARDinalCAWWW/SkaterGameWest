@@ -4,6 +4,7 @@ public class SFXMusic : MonoBehaviour
 {
     [SerializeField] GameObject[] objs;
 
+    [System.Obsolete]
     void Awake()
     {
 
