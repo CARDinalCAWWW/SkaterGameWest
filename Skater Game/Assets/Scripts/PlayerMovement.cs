@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Rotate(0, 0, rotateStep);
             timesRotated ++;
 
+            //Scoreing via rotations
             if (timesRotated >= 8)
             {
                 scoreScript.FlipAddScore();

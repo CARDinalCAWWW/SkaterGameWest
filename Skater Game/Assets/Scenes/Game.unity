@@ -655,7 +655,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addAmount: 1
   FlipAddAmount: 10
-  scoreText: {fileID: 0}
 --- !u!114 &347909496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3588,6 +3587,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 17.777779, y: 10, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1616623098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1616623100}
+  - component: {fileID: 1616623099}
+  m_Layer: 0
+  m_Name: Balls Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1616623099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616623098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bc6158750e6ef49b08b68506490d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rails:
+  - {fileID: 699805474799998367, guid: 67c71731c9b031d41956eb9c98e5e313, type: 3}
+  - {fileID: 699805474799998367, guid: 0848d8ede45c224459b8d64cb39f6e09, type: 3}
+  timeToWaitRails: 3
+  maxHeight: 1.5
+  minHeight: -1
+  timeToDestroy: 8
+  spawnPosition: {fileID: 1616623100}
+--- !u!4 &1616623100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616623098}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662988651
 GameObject:
   m_ObjectHideFlags: 0
@@ -8968,6 +9019,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 788949247}
   - {fileID: 1109454623}
+  - {fileID: 1616623100}
   - {fileID: 1486874013}
   - {fileID: 915644095}
   - {fileID: 1852862446}

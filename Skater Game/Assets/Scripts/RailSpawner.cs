@@ -6,8 +6,8 @@ public class RailSpawner : MonoBehaviour
     [SerializeField] GameObject[] rails;
 
     [SerializeField] float timeToWaitRails = 5;
-    [SerializeField] int maxHeight = 1;
-    [SerializeField] int minHeight = -1;
+    [SerializeField] float maxHeight = 1;
+    [SerializeField] float minHeight = -1;
     [SerializeField] float timeToDestroy = 10;
 
 
@@ -28,7 +28,7 @@ public class RailSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(timeToWaitRails);
 
-            int railHeight = Random.Range(maxHeight, minHeight);
+            float railHeight = Random.Range(maxHeight, minHeight);
             GameObject newRail = Instantiate(rails[Random.Range(0, 2)], new Vector2(spawnPosition.position.x, railHeight), Quaternion.identity);
             Destroy(newRail, timeToDestroy);
         }
