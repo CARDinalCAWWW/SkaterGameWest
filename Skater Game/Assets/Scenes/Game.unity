@@ -1736,7 +1736,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0014240742, y: 0.7326087}
+  m_Offset: {x: 0.0014240742, y: 0.7188755}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -1746,7 +1746,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.81195974, y: 1.5005519}
+  m_Size: {x: 0.81195974, y: 1.5280182}
   m_EdgeRadius: 0
 --- !u!212 &788949246
 SpriteRenderer:
@@ -1793,7 +1793,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 8242935023697170958, guid: 3645d0f039677a943b9e1c10d5595965, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8490566, g: 0.5526877, b: 0.5526877, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1812,7 +1812,7 @@ Transform:
   m_GameObject: {fileID: 788949243}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.025, y: -4.25, z: 0}
+  m_LocalPosition: {x: -4.5, y: -4.25, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2924,7 +2924,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0031909943, y: 5.999427}
+  m_Offset: {x: -0.0004918575, y: 5.999427}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2934,7 +2934,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5979109, y: 2.787065}
+  m_Size: {x: 0.39817333, y: 2.7870655}
   m_EdgeRadius: 0
 --- !u!1 &1418840756
 GameObject:
@@ -3293,7 +3293,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0007259846, y: 0.9034718}
+  m_Offset: {x: 0.0007259846, y: 1.0632619}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3303,7 +3303,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.86051226, y: 1.2214787}
+  m_Size: {x: 0.86051226, y: 0.9018986}
   m_EdgeRadius: 0
 --- !u!114 &1488258738
 MonoBehaviour:
@@ -3618,8 +3618,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rails:
-  - {fileID: 699805474799998367, guid: 67c71731c9b031d41956eb9c98e5e313, type: 3}
-  - {fileID: 699805474799998367, guid: 0848d8ede45c224459b8d64cb39f6e09, type: 3}
+  - {fileID: 6448348114875886737, guid: 116eb6297690b1649afccd7e18ed4d86, type: 3}
+  - {fileID: 5170907328759944839, guid: 3a592f524e519604b83e8301f1f8c32d, type: 3}
   timeToWaitRails: 3
   maxHeight: 1.5
   minHeight: -1

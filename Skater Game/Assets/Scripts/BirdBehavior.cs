@@ -6,6 +6,7 @@ public class BirdBehavior : MonoBehaviour
 
     public float horizontalSpeed = -2f;
     public float verticalSpeed = -3f;
+    [SerializeField] GameObject shockedChange;
 
     private Score scoreScript;
 
@@ -35,6 +36,7 @@ public class BirdBehavior : MonoBehaviour
             shouldMove = true;
             GetComponent<Collider2D>().enabled = false;
             scoreScript.BirdAddScore();
+            shockedChange.SetActive(false); 
         }
     }
 }
