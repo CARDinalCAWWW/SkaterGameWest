@@ -4,6 +4,7 @@ using TMPro;
 public class Score : MonoBehaviour
 {
     [SerializeField] float addAmount = 1f;
+    [SerializeField] float BirdAddAmount = 1f;
     [SerializeField] float FlipAddAmount = 1f;
     private TextMeshProUGUI scoreText;
 
@@ -33,5 +34,10 @@ public class Score : MonoBehaviour
     public void FlipAddScore()
     {
         score += FlipAddAmount;
+    }
+
+    public void BirdAddScore()
+    {
+        score += BirdAddAmount;
     }
 }
